@@ -33,7 +33,29 @@
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Characteristics\Construct.cs" />
+    <Compile Include="Characteristics\FauxModelCharacteristic.cs" />
+    <Compile Include="Characteristics\Living.cs" />
+    <Compile Include="Characteristics\Undead.cs" />
+    <Compile Include="Core\Util\DescriptionAttribute.cs" />
+    <Compile Include="FauxCrew.cs" />
+    <Compile Include="FauxData.cs" />
+    <Compile Include="FauxFaction.cs" />
+    <Compile Include="Models\FauxModel.cs" />
+    <Compile Include="FauxComponent.cs" />
+    <Compile Include="Models\FauxModelType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Restrictions\FauxRestriction.cs" />
+    <Compile Include="Upgrades\FauxUpgrade.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>
