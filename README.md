@@ -1,0 +1,2 @@
+# FauxCompanion
+Malifaux Companion App
