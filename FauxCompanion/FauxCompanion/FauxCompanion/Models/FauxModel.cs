@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-
-using EnergonSoftware.FauxCompanion.Characteristics;
-using EnergonSoftware.FauxCompanion.Core.Util;
+﻿using EnergonSoftware.FauxCompanion.Core.Util;
 
 namespace EnergonSoftware.FauxCompanion.Models
 {
@@ -19,22 +16,42 @@ namespace EnergonSoftware.FauxCompanion.Models
             Large
         }
 
-        public string Name { get; private set; }
+        public string Name { get; set; } = string.Empty;
 
-        public FauxFaction Faction { get; private set; }
+        public FauxFaction Faction { get; set; } = FauxFaction.None;
 
-        public IFauxModelType ModelType { get; private set; }
+        public IFauxModelType ModelType { get; set; } = new FauxModelTypeMinion();
 
-        public BaseSize Size { get; private set; }
+        public BaseSize Size { get; set; } = BaseSize.Small;
 
-        private readonly List<FauxModelCharacteristic> _characteristics = new List<FauxModelCharacteristic>();
+        public FauxRarity Rarity { get; set; } = FauxRarity.Zero;
 
-        public FauxModel(string name, FauxFaction faction, IFauxModelType modelType, BaseSize baseSize)
+        private FauxModelCharacteristic _characteristics = FauxModelCharacteristic.None;
+
+        public FauxTotemModelCharacteristic TotemCharacteristic { get; set; }
+
+#region Characteristics
+        public void AddCharacteristic(FauxModelCharacteristic characteristic)
         {
-            Name = name;
-            Faction = faction;
-            ModelType = modelType;
-            Size = baseSize;
+            _characteristics |= characteristic;
         }
+
+        public bool HasCharacterisitc(FauxModelCharacteristic characteristic)
+        {
+            return (long)characteristic == (long)(_characteristics & characteristic);
+        }
+#endregion
+
+#region Totem
+        public bool IsTotem()
+        {
+            return null != TotemCharacteristic;
+        }
+
+        public bool IsTotemAllowed(string modelName)
+        {
+            return IsTotem() && TotemCharacteristic.IsAllowed(modelName);
+        }
+#endregion
     }
 }

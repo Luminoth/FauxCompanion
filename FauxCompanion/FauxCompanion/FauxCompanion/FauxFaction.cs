@@ -7,6 +7,9 @@ namespace EnergonSoftware.FauxCompanion
     [Flags]
     public enum FauxFaction
     {
+        [Description("None")]
+        None = 0,
+
         [Description("Arcanists")]
         Arcanists = 1 << 0,
 

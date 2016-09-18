@@ -11,6 +11,6 @@ namespace EnergonSoftware.FauxCompanion
 
         public IReadOnlyCollection<FauxModel> Models => _models;
 
-        private Dictionary<FauxModel, List<FauxUpgrade>> _upgrades = new Dictionary<FauxModel, List<FauxUpgrade>>();
+        private readonly Dictionary<FauxModel, List<FauxUpgrade>> _upgrades = new Dictionary<FauxModel, List<FauxUpgrade>>();
     }
 }
