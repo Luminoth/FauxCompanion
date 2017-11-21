@@ -20,13 +20,15 @@ namespace EnergonSoftware.FauxCompanion.Models
 
         public FauxFaction Faction { get; set; } = FauxFaction.None;
 
-        public IFauxModelType ModelType { get; set; } = new FauxModelTypeMinion();
+        public IFauxModelStation Station { get; set; }
 
         public BaseSize Size { get; set; } = BaseSize.Small;
 
         public FauxRarity Rarity { get; set; } = FauxRarity.Zero;
 
         private FauxModelCharacteristic _characteristics = FauxModelCharacteristic.None;
+
+        public bool IsMercenary { get; set; }
 
         public FauxTotemModelCharacteristic TotemCharacteristic { get; set; }
 

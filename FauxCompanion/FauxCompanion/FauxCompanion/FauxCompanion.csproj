@@ -40,7 +40,7 @@
     <Compile Include="FauxData.cs" />
     <Compile Include="FauxFaction.cs" />
     <Compile Include="Models\FauxModel.cs" />
-    <Compile Include="Models\FauxModelType.cs" />
+    <Compile Include="Models\FauxModelStation.cs" />
     <Compile Include="Models\FauxTotemModelCharacteristic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Upgrades\FauxUpgradeRestriction.cs" />
